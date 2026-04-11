@@ -2,21 +2,21 @@
 package polygym;
 
 
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class PersonalDetails {
     
     private String firstName;
     private String surName;
-    private Date dateOfBirth;
+    private LocalDate  dateOfBirth;
     private String phone;
     private String email;
     private String address;
     private ArrayList<String> medicalHistory;
     private String gender;
 
-    public PersonalDetails(String firstName, String surName, Date dateOfBirth, String phone, String gender) {
+    public PersonalDetails(String firstName, String surName, LocalDate dateOfBirth, String phone, String gender) {
         this.firstName = firstName;
         this.surName = surName;
         this.dateOfBirth = dateOfBirth;
@@ -25,35 +25,38 @@ public class PersonalDetails {
     }
 
     public String getFirstName() {
-        return firstName;
+        return this.firstName;
     }
 
     public String getSurName() {
-        return surName;
+        return this.surName;
     }
 
-    public Date getDateOfBirth() {
-        return dateOfBirth;
+    public LocalDate  getDateOfBirth() {
+        return this.dateOfBirth;
     }
 
     public String getPhone() {
-        return phone;
+        return this.phone;
     }
 
     public String getEmail() {
-        return email;
+        return this.email;
     }
 
     public String getAddress() {
-        return address;
+        if (this.address == null) {
+            return "no address is set";
+        }
+        return this.address;
     }
 
     public ArrayList<String> getMedicalHistory() {
-        return medicalHistory;
+        return this.medicalHistory;
     }
 
     public String getGender() {
-        return gender;
+        return this.gender;
     }
 
     public void setPhone(String phone) {
