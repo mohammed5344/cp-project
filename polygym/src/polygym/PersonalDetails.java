@@ -15,13 +15,18 @@ public class PersonalDetails {
     private String address;
     private ArrayList<String> medicalHistory;
     private String gender;
+    
 
     public PersonalDetails(String firstName, String surName, LocalDate dateOfBirth, String phone, String gender) {
+        if(!this.validGender(gender)){
+        throw new IllegalArgumentException("invalid gender input");
+        }
         this.firstName = firstName;
         this.surName = surName;
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
         this.gender = gender;
+        
     }
 
     public String getFirstName() {
@@ -68,7 +73,7 @@ public class PersonalDetails {
     }
 
     public void setAddress(String city,int blockNum,int streetNum,int buildingNum,String apartment) {
-        if(city.length() == 0 || city == null || city.length() > 50){
+        if(city == null  || city.length() == 0 || city.length() > 50){
             
            throw new IllegalArgumentException("invalid city input");
          
@@ -78,6 +83,16 @@ public class PersonalDetails {
         
         this.address =String.format(addressFormat, city,blockNum,streetNum,buildingNum,apartment);
         
+    }
+    private boolean validGender(String gender){
+    if(gender == null){
+        return false;
+    
+    }
+    if(!gender.toLowerCase().equals("male")  && !gender.toLowerCase().equals("female") ){
+        return false;
+    }
+    return true;
     }
     
     
