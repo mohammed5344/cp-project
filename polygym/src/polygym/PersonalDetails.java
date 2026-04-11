@@ -68,9 +68,16 @@ public class PersonalDetails {
     }
 
     public void setAddress(String city,int blockNum,int streetNum,int buildingNum,String apartment) {
+        if(city.length() == 0 || city == null || city.length() > 50){
+            
+           throw new IllegalArgumentException("invalid city input");
+         
+        }
         String addressFormat = "city: %s\nblock Number: %d\nstreet number: %d\n"
                                 + "building number: %d\napartment : %s\n ";
+        
         this.address =String.format(addressFormat, city,blockNum,streetNum,buildingNum,apartment);
+        
     }
     
     
