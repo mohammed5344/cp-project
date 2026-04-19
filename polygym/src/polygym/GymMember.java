@@ -1,4 +1,4 @@
-import java.util.Date;
+package polygym;
 
 public class GymMember {
 

@@ -3,9 +3,13 @@ package polygym;
 
 import java.util.ArrayList;
 
-public class PersonalTrainer {
+public class PersonalTrainer extends GymEmployee {
     private ArrayList<GymMember> assignedMembers = new ArrayList<>();
-    
+    private PersonalDetails personalDetails;
+    public PersonalTrainer(PersonalDetails personalDetails) 
+    {
+    this.personalDetails = personalDetails;
+    }
     private void assignMember(GymMember member) {
         if(member == null) {
             throw new IllegalArgumentException("invalid member");
