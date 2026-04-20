@@ -6,9 +6,8 @@ import java.util.ArrayList;
 public class PersonalTrainer extends GymEmployee {
     private ArrayList<GymMember> assignedMembers = new ArrayList<>();
     private PersonalDetails personalDetails;
-    public PersonalTrainer(PersonalDetails personalDetails) 
-    {
-    this.personalDetails = personalDetails;
+    public PersonalTrainer(PersonalDetails personalDetails) {
+        super(personalDetails);
     }
     private void assignMember(GymMember member) {
         if(member == null) {
