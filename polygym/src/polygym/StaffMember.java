@@ -1,7 +1,5 @@
 package polygym;
 
-import java.util.Date;
-
 public class StaffMember extends GymMember {
 
     private int staffId;
@@ -11,8 +9,6 @@ public class StaffMember extends GymMember {
     public StaffMember(PersonalDetails personalDetails, int staffId){
         super(personalDetails);
         this.staffId = staffId;
-        this.position = null;
-        this.department = null;
     }
 
     public int getStaffId(){

@@ -9,8 +9,6 @@ public class StudentMember extends GymMember {
     public StudentMember(PersonalDetails personalDetails, int studentId){
         super(personalDetails);
         this.studentId = studentId;
-        this.major = null;
-        this.sportTeam = null;
     }
 
     public int getStudentId(){
