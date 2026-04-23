@@ -1,18 +1,18 @@
 package polygym;
 
-import java.util.Date;
-
 public class StaffMember extends GymMember {
 
     private int staffId;
     private String position;
     private String department;
-
-    public StaffMember(PersonalDetails personalDetails, int staffId){
+    private static int numOfMembers = 0;
+    public StaffMember(PersonalDetails personalDetails){
         super(personalDetails);
-        this.staffId = staffId;
-        this.position = null;
-        this.department = null;
+        if(personalDetails == null) {
+            throw new IllegalArgumentException("invalid personal details");
+        }
+        numOfMembers++;
+        this.staffId = numOfMembers;
     }
 
     public int getStaffId(){
@@ -45,5 +45,12 @@ public class StaffMember extends GymMember {
             throw new IllegalArgumentException("invalid department");
         }
         department = "Building " + buildingNum + ", Floor " + floor + ", Room " + room;
+    }
+    
+    public void setDepartment(String department) {
+        if (department == null || department.length() == 0 || department.length() > 100){
+            throw new IllegalArgumentException("invalid department");
+        }
+        this.department = department;
     }
 }

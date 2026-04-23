@@ -1,7 +1,6 @@
 package polygym;
 
 import java.time.LocalDate;
-import java.util.Date;
 public class GymMember {
 
    private int id;
@@ -12,8 +11,6 @@ public class GymMember {
 
    public GymMember(PersonalDetails personalDetails){
        this.personalDetails = personalDetails;
-       assignedTrainer = null;
-       membership = null;
        joinDate = LocalDate.now();
    }
 

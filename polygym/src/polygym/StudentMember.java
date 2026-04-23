@@ -2,19 +2,44 @@ package polygym;
 
 public class StudentMember extends GymMember {
 
-    private int studentId;
+    private int id;
     private String major;
     private String sportTeam;
+    private int studentID;
+    private static int numOfStudents = 0;
+    private String degree;
 
-    public StudentMember(PersonalDetails personalDetails, int studentId){
+    public String getDegree() {
+        return degree;
+    }
+
+    public void setDegree(String degree) {
+        this.degree = degree;
+    }
+    public StudentMember(PersonalDetails personalDetails){
         super(personalDetails);
-        this.studentId = studentId;
-        this.major = null;
-        this.sportTeam = null;
+        if(personalDetails == null) {
+            throw new IllegalArgumentException("invalid personal Details");
+        }
+        numOfStudents++;
+        this.id = numOfStudents;
+    }
+    
+    public StudentMember(PersonalDetails personalDetails, int studentID){
+        super(personalDetails);
+        if(personalDetails == null) {
+            throw new IllegalArgumentException("invalid personal Details");
+        }
+        numOfStudents++;
+        if(studentID < 0 || studentID > 999999999) {
+            throw new IllegalArgumentException("invalid student ID");
+        }
+        this.studentID = studentID;
+        this.id = numOfStudents;
     }
 
     public int getStudentId(){
-        return studentId;
+        return this.id;
     }
 
     public String getMajor(){
