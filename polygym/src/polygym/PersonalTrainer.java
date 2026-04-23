@@ -9,14 +9,14 @@ public class PersonalTrainer extends GymEmployee {
     public PersonalTrainer(PersonalDetails personalDetails) {
         super(personalDetails);
     }
-    private void assignMember(GymMember member) {
+    public void assignMember(GymMember member) {
         if(member == null) {
             throw new IllegalArgumentException("invalid member");
         }
         this.assignedMembers.add(member);
     }
     
-    private void removeMember(GymMember member) {
+    public void removeMember(GymMember member) {
         if(member == null) {
             throw new IllegalArgumentException("invalid member");
         }
@@ -27,7 +27,7 @@ public class PersonalTrainer extends GymEmployee {
         this.assignedMembers.remove(member);
     }
     
-    private ArrayList<GymMember> getAssignedMembers() {
+    public ArrayList<GymMember> getAssignedMembers() {
         return this.assignedMembers;
     }
 }
